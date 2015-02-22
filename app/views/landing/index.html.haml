@@ -1,0 +1,14 @@
+.container-fluid
+  %h2
+    = link_to "View the source code on GitHub", "https://github.com/sethherr/grape-doorkeeper" 
+    %small
+      this is the readme
+  %h3
+    Also, #{link_to "check out the documentation", documentation_index_url}.
+
+%hr
+
+
+.container.rendered-markdown
+  :plain
+    #{simple_format render file: "#{Rails.root}/README.markdown"}

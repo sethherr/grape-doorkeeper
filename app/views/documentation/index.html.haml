@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %title Grape-Doorkeeper documentation
+    %link{:href => "//fonts.googleapis.com/css?family=Droid+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag "documentation", media: "all"
+    <script type="text/javascript">window.base_url = "#{ENV['BASE_URL']}";</script>
+    = javascript_include_tag "documentation"
+    %body.swagger-section
+      %header#header.content-header
+        .container
+          / %a#logo{href: root_url} Beerbot
+          %form#api_selector.form
+            .api-header-group.api-header-url
+              %label{ for: 'baseUrl' }
+                Grape Doorkeeper
+              %input#input_baseUrl.form-control{:name => "baseUrl", :placeholder => "https://bikeindex.org/api/v1", :type => "text"}
+            .api-header-group.api-header-key
+              %label{ for: 'baseUrl' }
+                API key
+              %input#input_apiKey.form-control{:name => "apiKey", :placeholder => "api_key", :type => "text"}
+            %a#explore.btn.btn-primary{:href => "#"}
+              Explore
+
+      .container
+        .outside-info
+          %h2
+            Grape-Doorkeeper endpoints
+
+      #message-bar.swagger-ui-wrap &nbsp;
+      #swagger-ui-container.swagger-ui-wrap
+
+      .applications-panel
+        .container
+          .api-info-header
+            %h2
+              Applications:
+              %span.pull-right.less-strong
+                = link_to "Add an application", "/oauth/applications"
+            = render partial: 'api_v1_applications'
+
+      %footer#footer

@@ -1,0 +1,242 @@
+/*= require_self */
+// = require swagger-ui
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$gray-lightest: #F4F6F7;
+$gray-lighterer: #EEF2F3;
+$gray-lighter: #ECF0F1;
+$gray-light: #a7a7a7;
+$gray: #bebebe;
+
+$form-font-weight: 400;
+
+.content-header {
+  // background: #000;
+  background: $gray-lighter;
+  box-shadow: 0px 1px 2px rgba(black, .2)
+}
+
+// @media (min-width: $s-breakpoint+1) {
+//   .content-header {
+//     padding: 10px 0;
+//     .top-logo {
+//       // width: $one-column;
+//     }
+//   }
+// }
+
+
+.swagger-section {
+  #header {
+    background-color: $gray-lightest;
+    padding: 0 0 10px;
+    // padding: 14px;
+    a#logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-decoration: none;
+      background: transparent url("/assets/documentation_v2/logo_small.png") no-repeat left center;
+      padding: 20px 0 20px 40px;
+      color: black;
+    }
+    form#api_selector {
+      clear: both;
+      margin-top: 20px;
+      // @include clearfix;
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-top: 1em;
+    }
+    .api-header-group {
+      padding: 0 10px .25em;
+      label {
+        font-weight: $form-font-weight;
+        color: $gray;
+        margin-bottom: .3em;
+      }
+      input { box-shadow: none; }
+    }
+    .api-header-url {
+      input {
+        background: none;
+        border: none;
+      }
+    }
+
+    a#explore {
+      color: white;
+      float: right;
+      margin: .25em 10px 10px 0;
+    }
+  }
+
+  .outside-info { 
+    padding: 60px 0 40px; 
+    h2 {
+      margin: .5em 0; 
+    }
+  }
+
+  .content { min-height: 10px; }
+  .sandbox_header { padding: 5px 2px; }
+  input.submit { @extend .btn; @extend .btn-primary; }
+  
+  .swagger-ui-wrap { max-width: 100%; }
+}
+
+@media (min-width: 599px) {
+  .swagger-section #header form#api_selector {
+    width: 91.5%;
+    float: left;
+    padding-top: .3em;
+    .api-header-group {
+      float: left;
+      margin-right: 2%;
+      position: relative;
+      padding: 0;
+    }
+    .api-header-url { 
+      width: 33%;
+      label { padding-left: .5em; }
+    }
+    .api-header-key { width: 53%; }
+    a#explore {
+      float: left;
+      width: 10%;
+      margin: 1.2em 0 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.swagger-section .container {
+  h2 { font-size: 24px; }
+  strong { font-weight: bold; }
+  .alert { line-height: 1.2em; }
+  p { padding-bottom: .5em; }
+  pre { 
+    margin: .5em 0 2em;
+    code { background: none; }
+  }
+  .access-tokens {
+    margin-left: .25em;
+    li {
+      background: white;
+      border-radius: 4px;
+      padding: .25em .5em;
+      margin: 0 0 .25em;
+    }
+    p { margin: 0; padding: .1em 0; }
+  }
+  ol { list-style-type: decimal; padding-left: 2em; }
+  .less-strong { color: $gray; font-size: .8em; }
+
+  .authentication-notes {
+    margin-top: 40px;
+    h3 { margin-top: 1.5em; }
+  }
+}
+
+.applications-panel {
+  margin: 100px 0 0;
+  padding: 40px 0;
+  background: $gray-lightest;
+  border-top: 1px solid $gray-lighter;
+  .applications-list { 
+    margin: 0;
+    li {
+      padding: .5em 1em .25em;
+      background: white;
+      margin: 1em 0 0;
+      border-radius: 4px;
+    }
+    .authorize-new-explain {
+      margin: 0;
+      padding: 1em 0 0 0;
+    }
+  }
+  .application-info {
+    padding-bottom: .5em;
+    position: relative;
+    .tokens-table {
+      margin-bottom: 0;
+      pre, .btn { margin: 0; padding: .25em .5em; }
+      .binxbtn-primary { margin-bottom: .25em; } // For when it's small
+    }
+  }
+  .listed-app-name {
+    margin: 0;
+    display: block; width: 90%;
+    span {
+      // @include rotate(90deg);
+      margin-right: .75em;
+      -webkit-transition: all .1s ease-out;
+      -moz-transition: all .1s ease-out;
+      -o-transition: all .1s ease-out;
+      transition: all .1s ease-out;
+      float: left;
+      display: block;
+      font-size: 10px;
+      font-family: helvetica;
+    }
+    a:active span {
+      -webkit-transition: all .1s ease-out;
+      -moz-transition: all .1s ease-out;
+      -o-transition: all .1s ease-out;
+      transition: all .1s ease-out;
+    }
+    .listed-app-name:active, &.uncollapsed {
+      span { 
+        // @include rotate(0deg);
+      }
+    }
+  }
+}
+
+.swagger-section #api_info {
+  // We're going to do a better job introducing this ourselves
+  display: none; 
+}
+
+.api-info-header {
+  padding: 0 0 40px;
+}
+.api-info-footer {
+  padding: 40px 0;
+}
+
+footer#footer {
+  clear: both;
+  width: 100%;
+  height: 80px;
+}
+
+@media (min-width: 599px) {
+  .api-info-footer {
+    padding: 60px 0 40px;
+  }
+}
+
+#resources_container {
+  .toggleEndpointList { font-weight: 600; }
+//   input { @extend .form-control; }
+}
+
+.access-tokens {
+  li {
+    .btn {
+      padding: .25em .5em;
+      margin-left: .5em; 
+    }
+  }
+}
+
+.add-token-form {
+  label { 
+    font-weight: $form-font-weight;
+    margin-right: .5em;
+  }
+}
