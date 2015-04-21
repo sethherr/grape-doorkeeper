@@ -6,11 +6,11 @@ module API
       resource :me, desc: "Operations about the current user" do
         
         desc "Current user's information in access token's scope<span class='accstr'>*</span>", {
-          authorizations: { oauth2: [] },
           notes: <<-NOTE
             Current user is the owner of the `access_token` you use in the request.
           NOTE
         }
+        oauth2
         get '/' do
           result = {
             id: current_user.id.to_s,

@@ -94,7 +94,7 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
-    equalizer (0.0.9)
+    equalizer (0.0.11)
     erubis (2.7.0)
     eventmachine (1.0.4)
     execjs (2.2.2)
@@ -112,7 +112,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
-    grape (0.10.1)
+    grape (0.11.0)
       activesupport
       builder
       hashie (>= 2.1.0)
@@ -147,7 +147,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     haml (4.0.6)
       tilt
-    hashie (3.4.0)
+    hashie (3.4.1)
     hashie_rails (0.0.1)
       hashie (>= 3.0)
       rails (~> 4.0)
@@ -178,7 +178,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.5.1)
+    minitest (5.6.0)
     multi_json (1.11.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -304,16 +304,16 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     vcr (2.9.3)
-    virtus (1.0.4)
+    virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.3)
       rack (>= 1.0)
-    wine_bouncer (0.2.2)
-      doorkeeper (>= 1.4, <= 2.0.1)
-      grape (~> 0.8)
+    wine_bouncer (0.3.1)
+      doorkeeper (>= 1.4, < 2.2)
+      grape (~> 0.8, < 0.12)
 
 PLATFORMS
   ruby
