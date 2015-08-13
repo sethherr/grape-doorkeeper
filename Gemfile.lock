@@ -145,7 +145,7 @@ GEM
     guard-rspec (4.2.8)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    haml (4.0.6)
+    haml (4.0.7)
       tilt
     hashie (3.4.2)
     hashie_rails (0.0.1)
@@ -348,6 +348,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   rerun
   rspec-rails
+  sass
   sass-rails (~> 5.0)
   shoulda-matchers
   spring
