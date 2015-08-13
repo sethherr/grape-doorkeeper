@@ -28,7 +28,7 @@ gem "omniauth-bike-index"
 gem 'devise-bootstrap-views'
 gem "hashie_rails"
 
-gem 'doorkeeper',   '~> 2.0.1'
+gem 'doorkeeper',   '~> 2.2.2'
 gem 'wine_bouncer'
 
 gem 'kaminari'

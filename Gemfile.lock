@@ -84,8 +84,8 @@ GEM
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.3)
     diff-lcs (1.2.5)
-    doorkeeper (2.0.1)
-      railties (>= 3.1)
+    doorkeeper (2.2.2)
+      railties (>= 3.2)
     dotenv (1.0.2)
     dotenv-deployment (0.2.0)
       dotenv (~> 1.0)
@@ -112,7 +112,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    grape (0.11.0)
+    grape (0.12.0)
       activesupport
       builder
       hashie (>= 2.1.0)
@@ -147,7 +147,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     haml (4.0.6)
       tilt
-    hashie (3.4.1)
+    hashie (3.4.2)
     hashie_rails (0.0.1)
       hashie (>= 3.0)
       rails (~> 4.0)
@@ -177,8 +177,8 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
-    minitest (5.7.0)
-    multi_json (1.11.1)
+    minitest (5.8.0)
+    multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.2.0)
@@ -307,9 +307,9 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.3)
       rack (>= 1.0)
-    wine_bouncer (0.3.1)
-      doorkeeper (>= 1.4, < 2.2)
-      grape (~> 0.8, < 0.12)
+    wine_bouncer (0.4.0)
+      doorkeeper (>= 1.4, < 3.0)
+      grape (~> 0.10, < 0.13)
 
 PLATFORMS
   ruby
@@ -322,7 +322,7 @@ DEPENDENCIES
   database_cleaner
   devise
   devise-bootstrap-views
-  doorkeeper (~> 2.0.1)
+  doorkeeper (~> 2.2.2)
   dotenv-deployment
   dotenv-rails
   factory_girl_rails
