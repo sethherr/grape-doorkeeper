@@ -1,4 +1,4 @@
-ruby '2.1.2'
+ruby '2.2.2'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -18,20 +18,26 @@ gem 'turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-
+# Basic running
 gem 'haml'
 gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.1'
-gem 'kramdown'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-bike-index"
 gem 'devise-bootstrap-views'
-gem "hashie_rails"
+gem "hashie-forbidden_attributes"
 
+# Store configuration options
+gem 'dotenv-rails'
+
+
+# Authentication
 gem 'doorkeeper',   '~> 2.2.2'
 gem 'wine_bouncer'
 
+# Things tied in with Grade and swagger
+gem 'kramdown'
 gem 'kaminari'
 gem 'grape'
 gem 'active_model_serializers'
@@ -41,17 +47,14 @@ gem 'swagger-ui_rails'
 gem 'api-pagination'
 gem 'rack-cors', :require => 'rack/cors'
 
-gem 'dotenv-deployment'
-gem 'dotenv-rails'
-
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'foreman'
   gem 'rerun'
   gem 'vcr'
-  gem 'rspec', '~>2.14.1'
-  gem 'rspec-rails'
+  gem 'rspec', '~>3.3.0'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers', '~>2.7.0'
   gem 'pry'
   gem 'growl'
   gem 'guard'

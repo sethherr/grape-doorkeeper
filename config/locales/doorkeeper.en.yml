@@ -30,6 +30,9 @@ en:
               relative_uri: 'must be an absolute URI.'
               secured_uri: 'must be an HTTPS/SSL URI.'
   doorkeeper:
+    scopes: 
+      beef_cake: 'stuff'
+      funtimes: 'stuff'
     errors:
       messages:
         # Common error messages

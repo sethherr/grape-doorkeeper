@@ -1,3 +1,6 @@
+- add serializer and display of serializer
+
+
 # Grape-Doorkeeper
 
 #### Create an awesome versioned API, secured with OAuth2 and automatically documented.
@@ -17,6 +20,8 @@ Run `rake start` to get the server running locally. It runs at [http://localhost
 
 You will want to change [config/initializers/secret_token.rb](config/initializers/secret_token.rb) and export `DEVISE_SECRET_KEY` (see config/initializers/devise.rb).
 
+If you'd like applications to have owners, you can find informmation [about it here](https://github.com/doorkeeper-gem/doorkeeper/wiki/Associate-users-to-OAuth-applications-%28ownership%29).
+
 This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bike-index). For Bike Index login to work, export environment variables `BIKEINDEX_APP_ID` and `BIKEINDEX_APP_SECRET`. You'll need a Bike Index app, which you can create at [BikeIndex.org/oauth/applications/new](https://BikeIndex.org/oauth/applications/new).
 
 *Bike Index uses a similar grape, Swagger, doorkeeper setup&mdash;this is an example of [creating an OmniAuth strategy for doorkeeper](https://github.com/doorkeeper-gem/doorkeeper/wiki/Create-a-OmniAuth-strategy-for-your-provider)*.
@@ -24,11 +29,11 @@ This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bi
 
 ## Notes
 
-Grape is mounted in [app/controllers/api](app/controllers/api), as described in the excellent [Introduction to building APIs with Grape](http://codetunes.com/2014/introduction-to-building-apis-with-grape/) by Monterail.
+Grape is mounted in [app/controllers/api](app/controllers/api), as described in the excellent [Introduction to building APIs with Grape](http://codetunes.com/2014/introduction-to-building-apis-with-grape/) by Monterail, and [part 2](http://codetunes.com/2014/grape-part-II/) of the series.
 
-There are are more posts in the series which are worth reading, particularly [OAuth Implicit Grant with Grape, Doorkeeper and AngularJS](http://codetunes.com/2014/oauth-implicit-grant-with-grape-doorkeeper-and-angularjs/).
+There are are other posts in the series which are worth reading, particularly [OAuth Implicit Grant with Grape, Doorkeeper and AngularJS](http://codetunes.com/2014/oauth-implicit-grant-with-grape-doorkeeper-and-angularjs/).
 
-There is also a [Railscast on doorkeeper](http://railscasts.com/episodes/353-oauth-with-doorkeeper)
+There is also a [Railscast on doorkeeper](http://railscasts.com/episodes/353-oauth-with-doorkeeper).
 
 Important things in the Gemfile:
 

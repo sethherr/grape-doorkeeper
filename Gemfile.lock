@@ -79,8 +79,6 @@ GEM
     doorkeeper (2.2.2)
       railties (>= 3.2)
     dotenv (1.0.2)
-    dotenv-deployment (0.3.0)
-      dotenv (~> 1.0)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
     em-websocket (0.5.1)
@@ -142,7 +140,7 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.2)
-    hashie_rails (0.0.4)
+    hashie-forbidden_attributes (0.1.1)
       hashie (>= 3.0)
     hitimes (1.2.3)
     http_parser.rb (0.6.0)
@@ -242,22 +240,27 @@ GEM
       listen (~> 2.7, >= 2.7.3)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rspec (2.14.1)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
-    rspec-core (2.14.8)
-    rspec-expectations (2.14.5)
-      diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.6)
-    rspec-rails (2.14.2)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
+    rspec (3.3.0)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+    rspec-core (3.3.2)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-rails (3.3.3)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -266,8 +269,8 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shellany (0.0.1)
-    shoulda-matchers (2.7.0)
-      activesupport (>= 3.0.0)
+    shoulda-matchers (3.0.0)
+      activesupport (>= 4.0.0)
     slop (3.6.0)
     spring (1.4.0)
     sprockets (3.4.0)
@@ -313,7 +316,6 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   doorkeeper (~> 2.2.2)
-  dotenv-deployment
   dotenv-rails
   factory_girl_rails
   foreman
@@ -325,7 +327,7 @@ DEPENDENCIES
   guard-livereload
   guard-rspec (= 4.2.8)
   haml
-  hashie_rails
+  hashie-forbidden_attributes
   jquery-rails (~> 4.0.4)
   kaminari
   kramdown
@@ -337,11 +339,11 @@ DEPENDENCIES
   rack-cors
   rails (= 4.2.4)
   rerun
-  rspec (~> 2.14.1)
+  rspec (~> 3.3.0)
   rspec-rails
   sass
   sass-rails (~> 5.0)
-  shoulda-matchers (~> 2.7.0)
+  shoulda-matchers (~> 3.0)
   spring
   swagger-ui_rails
   turbolinks
