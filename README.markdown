@@ -1,6 +1,3 @@
-- add serializer and display of serializer
-
-
 # Grape-Doorkeeper
 
 #### Create an awesome versioned API, secured with OAuth2 and automatically documented.
