@@ -31,8 +31,8 @@ en:
               secured_uri: 'must be an HTTPS/SSL URI.'
   doorkeeper:
     scopes: 
-      beef_cake: 'stuff'
-      funtimes: 'stuff'
+      write_user: 'Can write to user'
+      read_user: 'Can read user attributes'
     errors:
       messages:
         # Common error messages

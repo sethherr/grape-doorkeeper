@@ -17,11 +17,16 @@ Run `rake start` to get the server running locally. It runs at [http://localhost
 
 You will want to change [config/initializers/secret_token.rb](config/initializers/secret_token.rb) and export `DEVISE_SECRET_KEY` (see config/initializers/devise.rb).
 
-If you'd like applications to have owners, you can find informmation [about it here](https://github.com/doorkeeper-gem/doorkeeper/wiki/Associate-users-to-OAuth-applications-%28ownership%29).
+You will also probably want to delete the [imaginary item](app/models/imaginary_item.rb) class and [serializer](app/serializers/item_serializer.rb), which are included for demonstration in [the me/items endpoint](app/controllers/api/v1/me.rb#L24-L33).
 
 This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bike-index). For Bike Index login to work, export environment variables `BIKEINDEX_APP_ID` and `BIKEINDEX_APP_SECRET`. You'll need a Bike Index app, which you can create at [BikeIndex.org/oauth/applications/new](https://BikeIndex.org/oauth/applications/new).
 
 *Bike Index uses a similar grape, Swagger, doorkeeper setup&mdash;this is an example of [creating an OmniAuth strategy for doorkeeper](https://github.com/doorkeeper-gem/doorkeeper/wiki/Create-a-OmniAuth-strategy-for-your-provider)*.
+
+
+## Adding to an existing application
+
+[View how to on the wiki](https://github.com/sethherr/grape-doorkeeper/wiki/Adding-to-an-existing-application).
 
 
 ## Notes

@@ -1,4 +1,4 @@
-OAUTH_SCOPES = [:beef_cake, :funtimes]
+OAUTH_SCOPES = [:read_user, :write_user]
 OAUTH_SCOPES_S = OAUTH_SCOPES.join(' ')
 Doorkeeper.configure do
   # Change the ORM that doorkeeper will use.
@@ -43,7 +43,7 @@ Doorkeeper.configure do
   # For more information go to
   # https://github.com/doorkeeper-gem/doorkeeper/wiki/Using-Scopes
   # default_scopes  :public
-  optional_scopes :beef_cake, :funtimes
+  optional_scopes OAUTH_SCOPES
 
   # Change the way client credentials are retrieved from the request object.
   # By default it retrieves first from the `HTTP_AUTHORIZATION` header, then
