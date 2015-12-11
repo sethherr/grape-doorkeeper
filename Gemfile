@@ -43,9 +43,12 @@ gem 'grape'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
-gem 'swagger-ui_rails'
 gem 'api-pagination'
 gem 'rack-cors', :require => 'rack/cors'
+
+# Temporarily remote branch because updates, for more info look at
+# https://github.com/d4be4st/swagger-ui_rails/pull/13
+gem 'swagger-ui_rails', github: 'audionerd/swagger-ui_rails'
 
 group :development, :test do
   gem 'rspec-rails'
