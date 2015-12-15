@@ -11,7 +11,6 @@
     %body.swagger-section
       %header#header.content-header
         .container
-          / %a#logo{href: root_url} Beerbot
           %form#api_selector.form
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
@@ -28,6 +27,26 @@
         .outside-info
           %h2
             Grape-Doorkeeper endpoints
+          .outside-info
+            %h2
+              Sending the authentication token
+            %p
+              %strong
+                In the header
+              You can send the authentication for a user in the header of your request.
+              %code
+                Authorization: Bearer TOKEN_STRING
+
+              %em
+                This is what Swagger does on this page. It's the recommended approach.
+            %p
+              %strong
+                in query 
+              as an <code>access_token</code> parameter, e.g.
+              %a{ href: "#" }
+                #{ENV['BASE_URL']}/api/v1/me?access_token=TOKEN_STRING
+
+            %hr
 
       #message-bar.swagger-ui-wrap &nbsp;
       #swagger-ui-container.swagger-ui-wrap

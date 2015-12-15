@@ -76,9 +76,8 @@ body.swagger-section {
 
   .outside-info { 
     padding: 60px 0 40px; 
-    h2 {
-      margin: .5em 0; 
-    }
+    h2 { margin: .5em 0; }
+    em { font-style: italic; }
   }
 
   .content { min-height: 10px; }
