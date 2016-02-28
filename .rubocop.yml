@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - 'Guardfile'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolProc:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+ParameterLists:
+  CountKeywordArgs: false

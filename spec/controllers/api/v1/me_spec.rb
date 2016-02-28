@@ -32,7 +32,7 @@ describe 'Me API V1', type: :request do
 
   describe 'items' do
     it 'gets items, returning correct pagination serialized by the serializer' do
-      get '/api/v1/me/items', format: :json, access_token: access_token.token
+      get '/api/v1/me/items', format: :json
       result = JSON.parse(response.body)
 
       expect(result['me'][0].keys.include?('secret')).to_not be_present

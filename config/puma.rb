@@ -53,7 +53,6 @@
 # stdout_redirect "log/puma.stdout.log", "log/puma.stderr.log", true
 # stdout_redirect "#{ENV['STACK_PATH']}/log/#{ENV['RAILS_ENV']}.log", "#{ENV['STACK_PATH']}/log/puma.stderr.log", true
 
-
 # Disable request logging.
 #
 # The default is "false".

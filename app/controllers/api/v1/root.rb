@@ -32,18 +32,18 @@ module API
       mount API::V1::Me
       
       add_swagger_documentation base_path: "/api",
-        api_version: 'v1',
-        hide_format: true, # don't show .json
-        hide_documentation_path: true,
-        mount_path: "/swagger_doc",
-        markdown: GrapeSwagger::Markdown::KramdownAdapter,
-        info: {
-            title: "Grape Swagger base app",
-            description: "This is the base api provided by the awesome sample app - https://github.com/sethherr/grape-doorkeeper",
-          }
+                                api_version: 'v1',
+                                hide_format: true, # don't show .json
+                                hide_documentation_path: true,
+                                mount_path: '/swagger_doc',
+                                markdown: GrapeSwagger::Markdown::KramdownAdapter,
+                                info: {
+                                    title: 'Grape Swagger base app',
+                                    description: 'This is the base api provided by the awesome sample app - https://github.com/sethherr/grape-doorkeeper',
+                                  }
 
       route :any, '*path' do
-        raise StandardError, "Unable to find endpoint"
+        raise StandardError, 'Unable to find endpoint'
       end
     end
   end

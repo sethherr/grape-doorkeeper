@@ -24,16 +24,16 @@ gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'devise'
 gem 'omniauth'
-gem "omniauth-bike-index"
+gem 'omniauth-bike-index'
 gem 'devise-bootstrap-views'
-gem "hashie-forbidden_attributes"
+gem 'hashie-forbidden_attributes'
 
 # Store configuration options
 gem 'dotenv-rails'
 
 
 # Authentication
-gem 'doorkeeper',   '~> 2.2.2'
+gem 'doorkeeper', '~> 2.2.2'
 gem 'wine_bouncer'
 
 # Things tied in with Grade and swagger
@@ -44,7 +44,7 @@ gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
 gem 'api-pagination'
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 
 # Temporarily remote branch because updates, for more info look at
 # https://github.com/d4be4st/swagger-ui_rails/pull/13
@@ -61,15 +61,16 @@ group :development, :test do
   gem 'pry'
   gem 'growl'
   gem 'guard'
+  gem 'guard-rubocop'
   gem 'guard-rspec', '4.2.8'
   gem 'guard-livereload'
 end
 
-group :development do 
+group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
-group :test do 
+group :test do
   gem 'database_cleaner'
 end

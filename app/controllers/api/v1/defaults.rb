@@ -2,9 +2,9 @@ module API
   module V1
     module Defaults
       extend ActiveSupport::Concern
-      included do 
+      included do
         formatter :json, Grape::Formatter::ActiveModelSerializers
-        
+
         before do
           header['Access-Control-Allow-Origin'] = '*'
           header['Access-Control-Request-Method'] = '*'
@@ -23,7 +23,6 @@ module API
             current_token.scopes
           end
         end
-      
       end
     end
   end

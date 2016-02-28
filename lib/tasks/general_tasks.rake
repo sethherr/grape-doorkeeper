@@ -1,4 +1,4 @@
-desc "Start the server locally"
+desc 'Start the server locally'
 task :start do
   system 'touch log/development.log'
   system 'redis-server &'

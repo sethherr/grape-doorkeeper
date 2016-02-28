@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe DocumentationController do
-
   describe 'view documentation index' do
     before do
       get :index

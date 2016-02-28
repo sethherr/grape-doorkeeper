@@ -3,16 +3,16 @@ module API
     class Me < API::V1::Root
       include API::V1::Defaults
 
-      resource :me, desc: "Operations about the current user" do
+      resource :me, desc: 'Operations about the current user' do
         
-        desc "Current user's information in access token's scope<span class='accstr'>*</span>", {
-          notes: <<-NOTE
+        desc "Current user's information in access token's scope<span class='accstr'>*</span>" do
+          detail <<-NOTE
             Current user is the owner of the `access_token` you use in the request.
           NOTE
-        }
+        end
         oauth2 # This endpoint requires authentication
         get '/' do
-          result = {
+          {
             id: current_user.id.to_s,
             user: {
               email: current_user.email,
@@ -38,7 +38,7 @@ module API
           optional :email, type: String, desc: 'User email'
           optional :name, type: String, desc: 'User name'
           # Demo of value list, displays as select in swagger-ui
-          optional :demo_value, type: String, values: ['value 1', 'value 2', '3'], default: 'value 1', desc: "Special value list"
+          optional :demo_value, type: String, values: ['value 1', 'value 2', '3'], default: 'value 1', desc: 'Special value list'
         end
         oauth2 'write_user'
         put '/' do
@@ -48,7 +48,7 @@ module API
           demo_value = declared_p.delete(:demo_value)
           
           current_user.update_attributes(declared_p)
-          result = {
+          {
             id: current_user.id.to_s,
             user: {
               value: demo_value,

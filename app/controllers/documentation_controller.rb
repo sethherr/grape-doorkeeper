@@ -1,5 +1,4 @@
 class DocumentationController < ApplicationController
-
   def index
     @applications = Doorkeeper::Application.all
     render layout: false
@@ -14,6 +13,4 @@ class DocumentationController < ApplicationController
     @access_grant = Doorkeeper::AccessGrant.where(resource_owner_id: current_user.id, token: @access_code).last
     @application = @access_grant.application if @access_grant.present?
   end
-
-
 end

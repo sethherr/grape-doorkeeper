@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence :unique_name do |n|
     "some cool name#{n}"
   end
