@@ -1,5 +1,9 @@
 class DocumentationController < ApplicationController
   def index
+    redirect_to controller: :documentation, action: :api_v1
+  end
+
+  def api_v1
     @applications = Doorkeeper::Application.all
     render layout: false
   end
