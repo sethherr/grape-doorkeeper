@@ -1,8 +1,8 @@
-ruby '2.2.2'
+ruby '2.2.5'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'sass'
@@ -46,9 +46,13 @@ gem 'grape-swagger'
 gem 'api-pagination'
 gem 'rack-cors', :require => 'rack/cors'
 
-# Temporarily remote branch because updates, for more info look at
-# https://github.com/d4be4st/swagger-ui_rails/pull/13
-gem 'swagger-ui_rails', github: 'audionerd/swagger-ui_rails'
+# There are issues surrounding rails-assets - see https://github.com/tenex/rails-assets/issues/291 
+# (TL;DR - it changed hands but will be maintained, nobody has better alternatives)
+# rails-assets is still the least complicated to get assets to "just work"
+gem 'bundler', '>= 1.8.4' # required for rails-assets.org - JS and CSS assets
+source 'https://rails-assets.org' do # JS land is crazy, so lock everything
+  gem 'rails-assets-swagger-ui', '~> 2.2.5' # The js and css assets for swaggering
+end
 
 group :development, :test do
   gem 'rspec-rails'

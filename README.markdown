@@ -13,7 +13,7 @@ This app is ready to deploy to Heroku [![Deploy](https://www.herokucdn.com/deplo
 
 First `bundle install` and `rake db:setup`
 
-Run `rake start` to get the server running locally. It runs at [http://localhost:3001](http://localhost:3001)
+Run `./start` to get the server running locally. It runs at [http://localhost:3003](http://localhost:3003)
 
 You will want to change [config/initializers/secret_token.rb](config/initializers/secret_token.rb) and export `DEVISE_SECRET_KEY` (see config/initializers/devise.rb).
 

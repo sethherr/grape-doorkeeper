@@ -1,5 +1,7 @@
-/*= require_self */
-// = require swagger-ui
+/* Revised Manifest file - require the swagger styles from rails-assets
+*= require_self
+*= require swagger-ui/dist/css/style.scss
+*/
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
