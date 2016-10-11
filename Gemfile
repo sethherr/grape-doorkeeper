@@ -24,9 +24,9 @@ gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'devise'
 gem 'omniauth'
-gem "omniauth-bike-index"
+gem 'omniauth-bike-index'
 gem 'devise-bootstrap-views'
-gem "hashie-forbidden_attributes"
+gem 'hashie-forbidden_attributes'
 
 # Store configuration options
 gem 'dotenv-rails'
@@ -44,7 +44,7 @@ gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
 gem 'api-pagination'
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 
 # There are issues surrounding rails-assets - see https://github.com/tenex/rails-assets/issues/291 
 # (TL;DR - it changed hands but will be maintained, nobody has better alternatives)
@@ -63,8 +63,8 @@ group :development, :test do
   gem 'rspec', '~>3.3.0'
   gem 'factory_girl_rails'
   gem 'pry'
-  gem 'growl'
   gem 'guard'
+  gem 'guard-rubocop'
   gem 'guard-rspec', '4.2.8'
   gem 'guard-livereload'
 end

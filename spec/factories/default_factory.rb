@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   sequence :unique_name do |n|
     "some cool name#{n}"
   end
@@ -13,4 +12,14 @@ FactoryGirl.define do
     email { generate(:unique_email) }
   end
 
+  factory :doorkeeper_application, class: Doorkeeper::Application do
+    name { generate(:unique_name) }
+    redirect_uri 'https://app.com'
+  end
+
+  factory :doorkeeper_token, class: Doorkeeper::AccessToken do
+    application_id { FactoryGirl.create(:doorkeeper_application).id }
+    resource_owner_id { FactoryGirl.create(:user).id }
+    scopes :public
+  end
 end

@@ -1,13 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_view/railtie'
+require 'sprockets/railtie'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -28,17 +28,17 @@ module GrapeDoorkeeper
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.middleware.insert_before "ActionDispatch::Static", "Rack::Cors" do
+    config.middleware.insert_before 'ActionDispatch::Static', 'Rack::Cors' do
       # Permit CORS from any origin, only in the API route
       allow do
         origins '*'
-        resource '/api/*', :headers => :any
+        resource '/api/*', headers: :any
       end
     end
 
     config.generators do |g|
       g.test_framework :rspec
-      g.factory_girl false      
+      g.factory_girl false
     end
 
     # Do not swallow errors in after_commit/after_rollback callbacks.

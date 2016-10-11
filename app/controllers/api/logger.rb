@@ -12,12 +12,12 @@ class API::Logger
       x_organization: env['HTTP_X_ORGANIZATION']
     }
 
-    ActiveSupport::Notifications.instrument "grape.request", payload do
+    ActiveSupport::Notifications.instrument 'grape.request', payload do
       @app.call(env).tap do |response|
-        if env["api.endpoint"].params.present? 
-          payload[:params] = env["api.endpoint"].params.to_hash
-          payload[:params].delete("route_info")
-          payload[:params].delete("format")
+        if env['api.endpoint'].params.present? 
+          payload[:params] = env['api.endpoint'].params.to_hash
+          payload[:params].delete('route_info')
+          payload[:params].delete('format')
         end
         payload[:response_status] = response[0]
       end

@@ -1,5 +1,5 @@
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'devise'
 require 'shoulda/matchers'
@@ -7,7 +7,7 @@ require 'shoulda/matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f}
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -37,14 +37,15 @@ RSpec.configure do |config|
 end
 
 
-def create_doorkeeper
-  @user = FactoryGirl.create(:user)
-  @application = Doorkeeper::Application.create(name: 'MyApp', redirect_uri: 'https://app.com')
-end
+# def create_doorkeeper
+#   @user = FactoryGirl.create(:user)
+#   @application = Doorkeeper::Application.create(name: 'MyApp', redirect_uri: 'https://app.com')
+# end
 
-def create_doorkeeper_app(opts={})
-  create_doorkeeper
-  scopes = opts && opts[:scopes] || 'public'
-  @token = Doorkeeper::AccessToken.create!(application_id: @application.id,
-    resource_owner_id: @user.id, scopes: scopes)
-end
+# def create_doorkeeper_app(opts={})
+#   create_doorkeeper
+#   scopes = opts && opts[:scopes] || 'public'
+#   @token = Doorkeeper::AccessToken.create!(application_id: @application.id,
+#     resource_owner_id: @user.id, scopes: scopes)
+# end
+
