@@ -1,10 +1,8 @@
 module API
   module V1
-    class Me < API::V1::Root
+    class Me < API::V1::RootV1
       include API::V1::Defaults
-
       resource :me, desc: 'Operations about the current user' do
-        
         desc "Current user's information in access token's scope<span class='accstr'>*</span>" do
           detail <<-NOTE
             Current user is the owner of the `access_token` you use in the request.
@@ -25,13 +23,12 @@ module API
         paginate per_page: 10 # This paginates, with a default of 10 per page
         get '/items', each_serializer: ItemSerializer do
           # create some imaginary items
-          items = (0..19).map{ |i|
-            ImaginaryItem.new(name: "Foo #{i*7}", id: i, secret: 'Bar')
-          }
+          items = (0..19).map do |i|
+            ImaginaryItem.new(name: "Foo #{i * 7}", id: i, secret: 'Bar')
+          end
           # We use the item serializer to serialize these items!
           paginate items
         end
-
 
         desc 'Update user, Protected, only accessible with write user'
         params do
@@ -46,7 +43,7 @@ module API
           # and ignore missing params (not setting their values to nil)
           declared_p = declared(params, include_missing: false)
           demo_value = declared_p.delete(:demo_value)
-          
+
           current_user.update_attributes(declared_p)
           {
             id: current_user.id.to_s,

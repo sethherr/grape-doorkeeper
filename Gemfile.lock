@@ -119,6 +119,8 @@ GEM
       grape (>= 0.8.0)
     grape-swagger (0.24.0)
       grape (>= 0.12.0)
+    grape_logging (1.3.0)
+      grape
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -348,6 +350,7 @@ DEPENDENCIES
   grape
   grape-active_model_serializers
   grape-swagger
+  grape_logging
   guard
   guard-livereload
   guard-rspec (= 4.2.8)

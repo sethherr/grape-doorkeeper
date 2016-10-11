@@ -35,17 +35,3 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 end
-
-
-# def create_doorkeeper
-#   @user = FactoryGirl.create(:user)
-#   @application = Doorkeeper::Application.create(name: 'MyApp', redirect_uri: 'https://app.com')
-# end
-
-# def create_doorkeeper_app(opts={})
-#   create_doorkeeper
-#   scopes = opts && opts[:scopes] || 'public'
-#   @token = Doorkeeper::AccessToken.create!(application_id: @application.id,
-#     resource_owner_id: @user.id, scopes: scopes)
-# end
-

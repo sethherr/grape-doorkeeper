@@ -43,6 +43,7 @@ gem 'grape'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
+gem 'grape_logging' # Better logging
 gem 'api-pagination'
 gem 'rack-cors', require: 'rack/cors'
 

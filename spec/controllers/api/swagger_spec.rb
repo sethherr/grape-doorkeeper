@@ -5,6 +5,7 @@ describe 'Swagger API V1 docs', type: :request do
     it 'responds with swagger for all the apis' do
       get '/api/v1/swagger_doc'
       result = JSON(response.body)
+      pp result
       expect(response.code).to eq('200')
       result['apis'].each do |api|
         # Not the fastest, but it ensures that all the swagger specs exist and render.
