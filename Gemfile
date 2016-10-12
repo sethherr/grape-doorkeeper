@@ -38,6 +38,8 @@ gem 'wine_bouncer'
 
 # Things tied in with Grade and swagger
 gem 'kramdown'
+# gem 'redcarpet' # Switched from Kramdown to enable rouge syntax highlighting
+# gem 'rouge' # Syntax highlighter, compatible with stylesheets for pygments
 gem 'kaminari'
 gem 'grape'
 gem 'active_model_serializers'

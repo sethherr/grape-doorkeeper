@@ -49,7 +49,6 @@ describe 'Me API V1', type: :request do
         access_token.update_attribute :scopes, 'read_user'
         orig_name = user.name
         put '/api/v1/me', attribs, format: :json
-
         expect(response.response_code).to eq(403)
         expect(response.body.match(/OAuth error.* write to user/i)).to be_present
         user.reload

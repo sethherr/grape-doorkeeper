@@ -2,11 +2,14 @@
 %html
   %head
     %title Grape-Doorkeeper documentation
-    %link{:href => "//fonts.googleapis.com/css?family=Droid+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: '//fonts.googleapis.com/css?family=Droid+Sans:400,700', rel: 'stylesheet', type: 'text/css'}
     = stylesheet_link_tag "documentation", media: "all"
-    :coffeescript
-      window.base_url = "#{ENV['BASE_URL']}"
-      window.api_version = "v1"
+    - base_url = (ENV['BASE_URL'] || root_url).gsub(/\/\z/, '') # So you can manually specify the url - remove trailing slash
+    - api_version = 'v1'
+    - swagger_url = "#{base_url}/api/#{api_version}/swagger_doc"
+    :javascript
+      window.base_url = "#{base_url}";
+      window.api_version = "#{api_version}";
     = javascript_include_tag "documentation"
     %body.swagger-section
       %header#header.content-header
@@ -15,12 +18,12 @@
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
                 Grape Doorkeeper
-              %input#input_baseUrl.form-control{:name => "baseUrl", :placeholder => "https://bikeindex.org/api/v1", :type => "text"}
+              %input#input_baseUrl.form-control{name: 'baseUrl', value: swagger_url, type: 'text'}
             .api-header-group.api-header-key
               %label{ for: 'baseUrl' }
                 API key
-              %input#input_apiKey.form-control{:name => "apiKey", :placeholder => "api_key", :type => "text"}
-            %a#explore.btn.btn-primary{:href => "#"}
+              %input#input_apiKey.form-control{name: 'apiKey', placeholder: 'api_key', type: 'text'}
+            %a#explore.btn.btn-primary{href: '#'}
               Explore
 
       .container

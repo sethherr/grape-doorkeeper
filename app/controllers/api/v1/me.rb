@@ -3,10 +3,8 @@ module API
     class Me < API::V1::RootV1
       include API::V1::Defaults
       resource :me, desc: 'Operations about the current user' do
-        desc "Current user's information in access token's scope<span class='accstr'>*</span>" do
-          detail <<-NOTE
-            Current user is the owner of the `access_token` you use in the request.
-          NOTE
+        desc 'Get information about the current user' do
+          detail "Current user is the owner of the `access_token` you use in the request."
         end
         oauth2 # This endpoint requires authentication
         get '/' do
@@ -55,7 +53,6 @@ module API
           }
         end
       end
-
     end
   end
 end
