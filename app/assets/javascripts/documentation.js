@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require swagger-ui/lib/jquery.slideto.min.js
 //= require swagger-ui/lib/jquery.wiggle.min.js
+//= require swagger-ui/lib/object-assign-pollyfill.js
 //= require handlebars
 //= require lodash
 //= require backbone
@@ -11,7 +12,7 @@
 //= require swagger-ui/lib/highlight.9.1.0.pack_extended.js
 //= require swagger-ui/lib/jsoneditor.min.js
 //= require swagger-ui/lib/marked.js
-
+//= require swagger-ui/lib/swagger-oauth.js
 //= require external/headroom
 //= require external/jQuery.headroom
 //= require new_inlined_swagger
