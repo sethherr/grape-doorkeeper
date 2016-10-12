@@ -10,6 +10,7 @@
     :javascript
       window.base_url = "#{base_url}";
       window.api_version = "#{api_version}";
+      window.swagger_url = "#{swagger_url}";
     = javascript_include_tag 'documentation'
     %body.swagger-section
       %header#header.content-header
@@ -18,7 +19,7 @@
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
                 Grape Doorkeeper
-              %input#input_baseUrl.form-control{ name: 'baseUrl', value: swagger_url, type: 'text' }
+              %input#input_baseUrl.form-control{ name: 'baseUrl', value: swagger_url, type: 'text', disabled: true }
             .api-header-group.api-header-key
               %label{ for: 'baseUrl' }
                 API key

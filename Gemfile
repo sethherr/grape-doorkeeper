@@ -19,7 +19,7 @@ gem 'turbolinks'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Basic running
-gem 'haml'
+gem 'hamlit' # Faster haml
 gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'devise'
@@ -51,6 +51,9 @@ gem 'rack-cors', require: 'rack/cors'
 # rails-assets is still the least complicated to get assets to "just work"
 gem 'bundler', '>= 1.8.4' # required for rails-assets.org - JS and CSS assets
 source 'https://rails-assets.org' do # JS land is crazy, so lock everything
+  gem 'rails-assets-handlebars', '~> 4.0.5' # Required by swagger-ui
+  gem 'rails-assets-lodash' # Required by swagger, replaces underscore for Backbone
+  gem 'rails-assets-backbone', '~> 1.3.3' # Required by swagger-ui
   gem 'rails-assets-swagger-ui', '~> 2.2.5' # The js and css assets for swaggering
 end
 

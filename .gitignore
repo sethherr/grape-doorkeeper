@@ -13,8 +13,7 @@
 /tmp
 
 # Ignore environmental variables
-.env*
-
+.env
 
 # Ignore rvm stuff and things
 dump.rdb

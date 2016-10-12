@@ -59,7 +59,7 @@ initializeApplicationList = ->
     app.find('.add-token-form, .add-token-form-btn').slideToggle()
 
 $ ->
-  url = "#{window.base_url}/api/#{window.api_version}/swagger_doc"
+  url = window.swagger_url
   window.swaggerUi = new SwaggerUi(
     url: url
     dom_id: "swagger-ui-container"

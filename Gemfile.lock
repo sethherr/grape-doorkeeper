@@ -235,7 +235,12 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.7)
       sprockets-rails
+    rails-assets-backbone (1.3.3)
+      rails-assets-underscore (>= 1.8.3)
+    rails-assets-handlebars (4.0.5)
+    rails-assets-lodash (4.16.4)
     rails-assets-swagger-ui (2.2.5)
+    rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -367,6 +372,9 @@ DEPENDENCIES
   puma
   rack-cors
   rails (= 4.2.7)
+  rails-assets-backbone (~> 1.3.3)!
+  rails-assets-handlebars (~> 4.0.5)!
+  rails-assets-lodash!
   rails-assets-swagger-ui (~> 2.2.5)!
   rerun
   rspec (~> 3.3.0)
