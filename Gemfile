@@ -31,15 +31,12 @@ gem 'hashie-forbidden_attributes'
 # Store configuration options
 gem 'dotenv-rails'
 
-
 # Authentication
-gem 'doorkeeper',   '~> 2.2.2'
+gem 'doorkeeper', '~> 2.2.2'
 gem 'wine_bouncer'
 
 # Things tied in with Grade and swagger
-gem 'kramdown'
-# gem 'redcarpet' # Switched from Kramdown to enable rouge syntax highlighting
-# gem 'rouge' # Syntax highlighter, compatible with stylesheets for pygments
+gem 'kramdown' # Markdown rendering
 gem 'kaminari'
 gem 'grape'
 gem 'active_model_serializers'
@@ -49,7 +46,7 @@ gem 'grape_logging' # Better logging
 gem 'api-pagination'
 gem 'rack-cors', require: 'rack/cors'
 
-# There are issues surrounding rails-assets - see https://github.com/tenex/rails-assets/issues/291 
+# There are issues surrounding rails-assets - see https://github.com/tenex/rails-assets/issues/291
 # (TL;DR - it changed hands but will be maintained, nobody has better alternatives)
 # rails-assets is still the least complicated to get assets to "just work"
 gem 'bundler', '>= 1.8.4' # required for rails-assets.org - JS and CSS assets
@@ -72,11 +69,11 @@ group :development, :test do
   gem 'guard-livereload'
 end
 
-group :development do 
+group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
-group :test do 
+group :test do
   gem 'database_cleaner'
 end

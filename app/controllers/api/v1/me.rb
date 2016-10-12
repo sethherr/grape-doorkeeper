@@ -4,7 +4,7 @@ module API
       include API::V1::Defaults
       resource :me, desc: 'Operations about the current user' do
         desc 'Get information about the current user' do
-          detail "Current user is the owner of the `access_token` you use in the request."
+          detail 'Current user is the owner of the `access_token` you use in the request.'
         end
         oauth2 # This endpoint requires authentication
         get '/' do

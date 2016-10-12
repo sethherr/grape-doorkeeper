@@ -10,7 +10,7 @@
     :javascript
       window.base_url = "#{base_url}";
       window.api_version = "#{api_version}";
-    = javascript_include_tag "documentation"
+    = javascript_include_tag 'documentation'
     %body.swagger-section
       %header#header.content-header
         .container
@@ -18,12 +18,12 @@
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
                 Grape Doorkeeper
-              %input#input_baseUrl.form-control{name: 'baseUrl', value: swagger_url, type: 'text'}
+              %input#input_baseUrl.form-control{ name: 'baseUrl', value: swagger_url, type: 'text' }
             .api-header-group.api-header-key
               %label{ for: 'baseUrl' }
                 API key
-              %input#input_apiKey.form-control{name: 'apiKey', placeholder: 'api_key', type: 'text'}
-            %a#explore.btn.btn-primary{href: '#'}
+              %input#input_apiKey.form-control{ name: 'apiKey', placeholder: 'api_key', type: 'text' }
+            %a#explore.btn.btn-primary{ href: '#' }
               Explore
 
       .container
@@ -46,7 +46,7 @@
               %strong
                 in query 
               as an <code>access_token</code> parameter, e.g.
-              %a{ href: "#" }
+              %a{ href: '#' }
                 #{ENV['BASE_URL']}/api/v1/me?access_token=TOKEN_STRING
 
             %hr
@@ -60,7 +60,7 @@
             %h2
               Applications:
               %span.pull-right.less-strong
-                = link_to "Add an application", "/oauth/applications"
+                = link_to 'Add an application', '/oauth/applications'
             = render partial: 'api_v1_applications'
 
       %footer#footer
