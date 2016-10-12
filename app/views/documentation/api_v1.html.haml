@@ -2,12 +2,16 @@
 %html
   %head
     %title Grape-Doorkeeper documentation
-    %link{:href => "//fonts.googleapis.com/css?family=Droid+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: '//fonts.googleapis.com/css?family=Droid+Sans:400,700', rel: 'stylesheet', type: 'text/css'}
     = stylesheet_link_tag "documentation", media: "all"
-    :coffeescript
-      window.base_url = "#{ENV['BASE_URL']}"
-      window.api_version = "v1"
-    = javascript_include_tag "documentation"
+    - base_url = (ENV['BASE_URL'] || root_url).gsub(/\/\z/, '') # So you can manually specify the url - remove trailing slash
+    - api_version = 'v1'
+    - swagger_url = "#{base_url}/api/#{api_version}/swagger_doc"
+    :javascript
+      window.base_url = "#{base_url}";
+      window.api_version = "#{api_version}";
+      window.swagger_url = "#{swagger_url}";
+    = javascript_include_tag 'documentation'
     %body.swagger-section
       %header#header.content-header
         .container
@@ -15,12 +19,12 @@
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
                 Grape Doorkeeper
-              %input#input_baseUrl.form-control{:name => "baseUrl", :placeholder => "https://bikeindex.org/api/v1", :type => "text"}
+              %input#input_baseUrl.form-control{ name: 'baseUrl', value: swagger_url, type: 'text', disabled: true }
             .api-header-group.api-header-key
               %label{ for: 'baseUrl' }
                 API key
-              %input#input_apiKey.form-control{:name => "apiKey", :placeholder => "api_key", :type => "text"}
-            %a#explore.btn.btn-primary{:href => "#"}
+              %input#input_apiKey.form-control{ name: 'apiKey', placeholder: 'api_key', type: 'text' }
+            %a#explore.btn.btn-primary{ href: '#' }
               Explore
 
       .container
@@ -43,7 +47,7 @@
               %strong
                 in query 
               as an <code>access_token</code> parameter, e.g.
-              %a{ href: "#" }
+              %a{ href: '#' }
                 #{ENV['BASE_URL']}/api/v1/me?access_token=TOKEN_STRING
 
             %hr
@@ -57,7 +61,7 @@
             %h2
               Applications:
               %span.pull-right.less-strong
-                = link_to "Add an application", "/oauth/applications"
+                = link_to 'Add an application', '/oauth/applications'
             = render partial: 'api_v1_applications'
 
       %footer#footer

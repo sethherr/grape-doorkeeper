@@ -1,8 +1,8 @@
-ruby '2.2.2'
+ruby '2.2.5'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'sass'
@@ -19,7 +19,7 @@ gem 'turbolinks'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Basic running
-gem 'haml'
+gem 'hamlit' # Faster haml
 gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'devise'
@@ -31,24 +31,31 @@ gem 'hashie-forbidden_attributes'
 # Store configuration options
 gem 'dotenv-rails'
 
-
 # Authentication
 gem 'doorkeeper', '~> 2.2.2'
 gem 'wine_bouncer'
 
 # Things tied in with Grade and swagger
-gem 'kramdown'
+gem 'kramdown' # Markdown rendering
 gem 'kaminari'
 gem 'grape'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
+gem 'grape_logging' # Better logging
 gem 'api-pagination'
 gem 'rack-cors', require: 'rack/cors'
 
-# Temporarily remote branch because updates, for more info look at
-# https://github.com/d4be4st/swagger-ui_rails/pull/13
-gem 'swagger-ui_rails', github: 'audionerd/swagger-ui_rails'
+# There are issues surrounding rails-assets - see https://github.com/tenex/rails-assets/issues/291
+# (TL;DR - it changed hands but will be maintained, nobody has better alternatives)
+# rails-assets is still the least complicated to get assets to "just work"
+gem 'bundler', '>= 1.8.4' # required for rails-assets.org - JS and CSS assets
+source 'https://rails-assets.org' do # JS land is crazy, so lock everything
+  gem 'rails-assets-handlebars', '~> 4.0.5' # Required by swagger-ui
+  gem 'rails-assets-lodash' # Required by swagger, replaces underscore for Backbone
+  gem 'rails-assets-backbone', '~> 1.3.3' # Required by swagger-ui
+  gem 'rails-assets-swagger-ui', '~> 2.2.5' # The js and css assets for swaggering
+end
 
 group :development, :test do
   gem 'rspec-rails'
@@ -59,7 +66,6 @@ group :development, :test do
   gem 'rspec', '~>3.3.0'
   gem 'factory_girl_rails'
   gem 'pry'
-  gem 'growl'
   gem 'guard'
   gem 'guard-rubocop'
   gem 'guard-rspec', '4.2.8'

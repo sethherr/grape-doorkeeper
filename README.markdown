@@ -11,15 +11,15 @@ This app is ready to deploy to Heroku [![Deploy](https://www.herokucdn.com/deplo
 
 ## Set up
 
-First `bundle install` and `rake db:setup`
+- Set up the rails app and database with `bundle install` and `rake db:setup`
 
-Run `rake start` to get the server running locally. It runs at [http://localhost:3001](http://localhost:3001)
+- Run `./start` to get the server running locally. It runs at [http://localhost:3003](http://localhost:3003)
 
-You will want to change [config/initializers/secret_token.rb](config/initializers/secret_token.rb) and export `DEVISE_SECRET_KEY` (see config/initializers/devise.rb).
+- Copy [.env.sample](/.env.sample) to `.env` and replace the values with your own values.
 
-You will also probably want to delete the [imaginary item](app/models/imaginary_item.rb) class and [serializer](app/serializers/item_serializer.rb), which are included for demonstration in [the me/items endpoint](app/controllers/api/v1/me.rb#L24-L33).
+- Delete the [imaginary item](app/models/imaginary_item.rb) class and [serializer](app/serializers/item_serializer.rb), which are included for demonstration in [the me/items endpoint](app/controllers/api/v1/me.rb#L24-L33).
 
-This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bike-index). For Bike Index login to work, export environment variables `BIKEINDEX_APP_ID` and `BIKEINDEX_APP_SECRET`. You'll need a Bike Index app, which you can create at [BikeIndex.org/oauth/applications/new](https://BikeIndex.org/oauth/applications/new).
+This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bike-index). For Bike Index login to work, create a Bike Index app at [BikeIndex.org/oauth/applications/new](https://BikeIndex.org/oauth/applications/new) and add the values from `BIKEINDEX_APP_ID` and `BIKEINDEX_APP_SECRET` to the `.env` file.
 
 *Bike Index uses a similar grape, Swagger, doorkeeper setup&mdash;this is an example of [creating an OmniAuth strategy for doorkeeper](https://github.com/doorkeeper-gem/doorkeeper/wiki/Create-a-OmniAuth-strategy-for-your-provider)*.
 
@@ -48,13 +48,13 @@ Important things in the Gemfile:
 
 Also important, but maybe not as necessary to know about:
 
-- [rails_swagger-ui](https://github.com/d4be4st/swagger-ui_rails) (how we get swagger-ui)
+- [rails-assets](https://rails-assets.org) manages the js for swagger-ui
 - [Puma](http://puma.io/) (the web server)
 - [api-pagination](https://github.com/davidcelis/api-pagination)
 - [grape-active_model_serializers](https://github.com/jrhe/grape-active_model_serializers) 
 - [CORS](https://github.com/cyu/rack-cors)
 - [foreman](https://github.com/ddollar/foreman) (in development to manage processes)
-- [Haml](http://haml.info/)
+- [Haml](http://haml.info/) - and [Hamlit](https://github.com/k0kubun/hamlit), which is faster haml
 - [dotenv-rails](https://github.com/bkeepers/dotenv) (load environmental variables - .env is in .gitignore, so it isn't committed)
 - [Bootstrap](http://getbootstrap.com/)
 - Postgres
@@ -66,6 +66,7 @@ If you want to change the name of the app, swap out:
 - `GrapeDoorkeeper` in [config/application.rb](config/application.rb)
 - `grape-doorkeeper` in [config/database.yml](config/database.yml) (multiple instances)
 - `grape-doorkeeper` in [config/initializers/session_store.rb](config/initializers/session_store.rb)
+- Do a project wide search of `/grape.doorkeeper/i` to catch any lingering ones like [api_v1.html.haml](app/views/documentation/api_v1.html.haml)
 
 
 ## Testing

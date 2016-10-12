@@ -34,8 +34,7 @@ describe 'Me API V1', type: :request do
     it 'gets items, returning correct pagination serialized by the serializer' do
       get '/api/v1/me/items', format: :json
       result = JSON.parse(response.body)
-
-      expect(result['me'][0].keys.include?('secret')).to_not be_present
+      expect(result[0].keys.include?('secret')).to_not be_present
       expect(response.code).to eq('200')
       expect(response.header['Total']).to eq('20')
       expect(response.header['Link'].match('page=2>; rel=\"next\"')).to be_present
@@ -50,7 +49,6 @@ describe 'Me API V1', type: :request do
         access_token.update_attribute :scopes, 'read_user'
         orig_name = user.name
         put '/api/v1/me', attribs, format: :json
-
         expect(response.response_code).to eq(403)
         expect(response.body.match(/OAuth error.* write to user/i)).to be_present
         user.reload
