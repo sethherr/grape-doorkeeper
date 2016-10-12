@@ -16,7 +16,7 @@ module API
 
       add_swagger_documentation \
         base_path: '/api',
-        doc_version: 'v1',
+        api_version: 'v1',
         hide_format: true, # don't show .json
         hide_documentation_path: true,
         mount_path: '/swagger_doc',
