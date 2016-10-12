@@ -1,8 +1,8 @@
-ruby '2.2.2'
+ruby '2.2.5'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'sass'
@@ -40,6 +40,7 @@ gem 'wine_bouncer'
 gem 'kramdown'
 gem 'kaminari'
 gem 'grape'
+gem 'grape_logging'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'grape-swagger'
