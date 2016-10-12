@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :omniauth_providers => [:bike_index]
-
+         :recoverable, :rememberable, :trackable, omniauth_providers: [:bike_index]
 
   def self.from_omniauth(uid, auth)
     where(email: auth.info.email).first_or_create do |user|
@@ -17,5 +16,4 @@ class User < ActiveRecord::Base
       end
     end
   end
-
 end
