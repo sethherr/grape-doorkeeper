@@ -3,6 +3,8 @@ module API
     class RootV1 < API::Base
       format :json
       formatter :json, Grape::Formatter::ActiveModelSerializers
+      # Use the JsonApi adapter
+      ActiveModelSerializers.config.adapter = :json_api
       version 'v1'
       default_error_formatter :json
       content_type :json, 'application/json'
@@ -20,7 +22,6 @@ module API
         hide_format: true, # don't show .json
         hide_documentation_path: true,
         mount_path: '/swagger_doc',
-        markdown: GrapeSwagger::Markdown::KramdownAdapter.new,
         endpoint_auth_wrapper: WineBouncer::OAuth2,
         info: {
           title: 'Grape Swagger base app',
