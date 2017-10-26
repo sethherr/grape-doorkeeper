@@ -51,7 +51,7 @@ Also important, but maybe not as necessary to know about:
 - [rails-assets](https://rails-assets.org) manages the js for swagger-ui
 - [Puma](http://puma.io/) (the web server)
 - [api-pagination](https://github.com/davidcelis/api-pagination)
-- [grape-active_model_serializers](https://github.com/jrhe/grape-active_model_serializers) 
+- [active_model_serializers](https://github.com/rails-api/active_model_serializers/tree/0-8-stable) - uses 0.8 branch of active model serializers, because nothing past 0.8 supports caching
 - [CORS](https://github.com/cyu/rack-cors)
 - [foreman](https://github.com/ddollar/foreman) (in development to manage processes)
 - [Haml](http://haml.info/) - and [Hamlit](https://github.com/k0kubun/hamlit), which is faster haml

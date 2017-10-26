@@ -32,9 +32,10 @@ describe 'Me API V1', type: :request do
 
   describe 'items' do
     it 'gets items, returning correct pagination serialized by the serializer' do
+      FactoryGirl.create(:user)
       get '/api/v1/me/items', headers: { format: :json }
       result = JSON.parse(response.body)
-      expect(result['data'][0].keys.include?('secret')).to_not be_present
+      expect(result.first.keys.include?('secret')).to be_present
       expect(response.code).to eq('200')
       expect(response.header['Total']).to eq('20')
       expect(response.header['Link'].match('page=2>; rel=\"next\"')).to be_present

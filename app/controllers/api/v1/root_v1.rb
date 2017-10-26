@@ -2,9 +2,6 @@ module API
   module V1
     class RootV1 < API::Base
       format :json
-      formatter :json, Grape::Formatter::ActiveModelSerializers
-      # Use the JsonApi adapter
-      ActiveModelSerializers.config.adapter = :json_api
       version 'v1'
       default_error_formatter :json
       content_type :json, 'application/json'
