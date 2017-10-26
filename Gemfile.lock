@@ -377,7 +377,7 @@ DEPENDENCIES
   pry
   puma
   rack-cors
-  rails (~> 5.0.4)
+  rails (~> 5.0.6)
   rails-controller-testing
   rspec
   rspec-rails
