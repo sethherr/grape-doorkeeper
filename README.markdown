@@ -2,7 +2,7 @@
 
 #### Create an awesome versioned API, secured with OAuth2 and automatically documented.
 
-This is a basic Rails 4 application with [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper), [Grape](https://github.com/intridea/grape) & [Swagger](http://swagger.io/) for getting to API building quickly.
+This is a basic Rails 5 application with [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper), [Grape](https://github.com/intridea/grape) & [Swagger](http://swagger.io/) for getting to API building quickly.
 
 You can view the [live app](https://grape-doorkeeper.herokuapp.com) and the [Swagger-ui documentation](https://grape-doorkeeper.herokuapp.com/documentation). 
 
@@ -51,7 +51,7 @@ Also important, but maybe not as necessary to know about:
 - [rails-assets](https://rails-assets.org) manages the js for swagger-ui
 - [Puma](http://puma.io/) (the web server)
 - [api-pagination](https://github.com/davidcelis/api-pagination)
-- [grape-active_model_serializers](https://github.com/jrhe/grape-active_model_serializers) 
+- [active_model_serializers](https://github.com/rails-api/active_model_serializers/tree/0-8-stable) - uses 0.8 branch of active model serializers, because nothing past 0.8 supports caching
 - [CORS](https://github.com/cyu/rack-cors)
 - [foreman](https://github.com/ddollar/foreman) (in development to manage processes)
 - [Haml](http://haml.info/) - and [Hamlit](https://github.com/k0kubun/hamlit), which is faster haml

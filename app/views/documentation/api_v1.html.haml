@@ -15,12 +15,12 @@
             .api-header-group.api-header-url
               %label{ for: 'baseUrl' }
                 Grape Doorkeeper
-              %input#input_baseUrl.form-control{:name => "baseUrl", :placeholder => "https://bikeindex.org/api/v1", :type => "text"}
+              %input#input_baseUrl.form-control{name: 'baseUrl', placeholder: 'https://grape-doorkeeper.herokuapp.com/api/v1', type: 'text'}
             .api-header-group.api-header-key
               %label{ for: 'baseUrl' }
                 API key
-              %input#input_apiKey.form-control{:name => "apiKey", :placeholder => "api_key", :type => "text"}
-            %a#explore.btn.btn-primary{:href => "#"}
+              %input#input_apiKey.form-control{name: 'apiKey', placeholder: 'api_key', type: 'text'}
+            %a#explore.btn.btn-primary{href: '#'}
               Explore
 
       .container

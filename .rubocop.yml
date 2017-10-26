@@ -15,6 +15,9 @@ Style/SymbolProc:
 Metrics/LineLength:
   Enabled: false
 
+Bundler/OrderedGems:
+  Enabled: false
+
 Style/AndOr:
   Enabled: false
 

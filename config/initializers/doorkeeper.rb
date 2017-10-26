@@ -1,9 +1,7 @@
 OAUTH_SCOPES = [:read_user, :write_user].freeze
 OAUTH_SCOPES_S = OAUTH_SCOPES.join(' ')
 Doorkeeper.configure do
-  # Change the ORM that doorkeeper will use.
-  # Currently supported options are :active_record, :mongoid2, :mongoid3,
-  # :mongoid4, :mongo_mapper
+  # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
 
   # This block will be called to check whether the resource owner is authenticated or not.
@@ -26,6 +24,20 @@ Doorkeeper.configure do
   # If you want to disable expiration, set this to nil.
   # access_token_expires_in 2.hours
 
+  # Assign a custom TTL for implicit grants.
+  # custom_access_token_expires_in do |oauth_client|
+  #   oauth_client.application.additional_settings.implicit_oauth_expiration
+  # end
+
+  # Use a custom class for generating the access token.
+  # https://github.com/doorkeeper-gem/doorkeeper#custom-access-token-generator
+  # access_token_generator '::Doorkeeper::JWT'
+
+  # The controller Doorkeeper::ApplicationController inherits from.
+  # Defaults to ActionController::Base.
+  # https://github.com/doorkeeper-gem/doorkeeper#custom-base-controller
+  # base_controller 'ApplicationController'
+
   # Reuse access token for the same resource owner within an application (disabled by default)
   # Rationale: https://github.com/doorkeeper-gem/doorkeeper/issues/383
   # reuse_access_token
@@ -34,10 +46,10 @@ Doorkeeper.configure do
   # use_refresh_token
 
   # Provide support for an owner to be assigned to each registered application (disabled by default)
-  # Optional parameter :confirmation => true (default false) if you want to enforce ownership of
+  # Optional parameter confirmation: true (default false) if you want to enforce ownership of
   # a registered application
   # Note: you must also run the rails g doorkeeper:application_owner generator to provide the necessary support
-  # enable_application_owner :confirmation => false
+  # enable_application_owner confirmation: false
 
   # Define access token scopes for your provider
   # For more information go to
@@ -78,22 +90,23 @@ Doorkeeper.configure do
   # "password"           => Resource Owner Password Credentials Grant Flow
   # "client_credentials" => Client Credentials Grant Flow
   #
-  # If not specified, Doorkeeper enables all the four grant flows.
+  # If not specified, Doorkeeper enables authorization_code and
+  # client_credentials.
   #
-  # grant_flows %w(authorization_code implicit password client_credentials)
+  # implicit and password grant flows have risks that you should understand
+  # before enabling:
+  #   http://tools.ietf.org/html/rfc6819#section-4.4.2
+  #   http://tools.ietf.org/html/rfc6819#section-4.4.3
+  #
+  # grant_flows %w(authorization_code client_credentials)
 
   # Under some circumstances you might want to have applications auto-approved,
   # so that the user skips the authorization step.
-  # For example if dealing with trusted a application.
+  # For example if dealing with a trusted application.
   # skip_authorization do |resource_owner, client|
   #   client.superapp? or resource_owner.admin?
   # end
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
-
-  # Allow dynamic query parameters (disabled by default)
-  # Some applications require dynamic query parameters on their request_uri
-  # set to true if you want this to be allowed
-  # wildcard_redirect_uri false
 end
