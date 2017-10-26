@@ -1,2 +1,2 @@
-custom_web: bundle exec puma -b 'tcp://0.0.0.0:3003' -C config/puma.rb
+web: bundle exec puma -t 5:5 -p 3003 -e ${RACK_ENV:-development}
 log: tail -f log/development.log
