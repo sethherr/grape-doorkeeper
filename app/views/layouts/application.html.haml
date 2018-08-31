@@ -1,37 +1,11 @@
 !!!
 %html
   %head
-    %title
-      Doorkeeper Grape
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title GrapeDoorkeeper
     = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle.collapsed{ type: "button", data: {toggle: "collapse", target: "#headernav"}}
-            %span.sr-only
-              Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{ href: root_url}
-            Doorkeeper Grape
-        .collapse.navbar-collapse#headernav
-          - if current_user.present?
-            %p.navbar-text.navbar-right
-              Signed in as
-              = link_to current_user.email, edit_user_registration_url, class: "navbar-link"
-              \|
-              %small
-                = link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link"
-                
-          - else
-            .navbar-text.navbar-right
-              = link_to "Sign up", new_user_registration_url, class: 'navbar-link'
-            = link_to "Sign in", new_user_session_url, class: 'btn btn-default navbar-btn navbar-right'
-    
-    .container-fluid
-      = render partial: "layouts/flash_messages", flash: flash 
-      = yield
+    = yield

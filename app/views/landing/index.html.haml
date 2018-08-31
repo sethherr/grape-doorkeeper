@@ -11,4 +11,4 @@
 
 .container.rendered-markdown
   :plain
-    #{simple_format render file: "#{Rails.root}/README.markdown"}
+    #{CommonMarker.render_html(File.read("#{Rails.root}/README.markdown"))}

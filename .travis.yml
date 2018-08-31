@@ -1,15 +1,29 @@
 language: ruby
+services:
+  - redis
+  - postgres
 addons:
-  postgresql: '9.4'
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
 rvm:
-  - 2.2.5
+  - 2.5.1
 before_install:
    - gem install bundler -v 1.9.10
 script:
   - bundle exec rspec
+branches:
+  only:
+    - master # We want to build PRs, and merges to master
 before_script:
-  - psql -c 'create database grape_doorkeeper_test' -U postgres
-  - bundle exec rake db:schema:load
+  - redis-cli info
+  - psql -c 'create database grape_doorkeeper_test'
+  - bundle exec rake db:structure:load
 cache: bundler
 notifications:
   email:

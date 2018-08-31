@@ -1,13 +1,30 @@
 # Grape-Doorkeeper
 
+---
+
+Updates - need to be integrated into the documentation
+
+- We use [readthis](https://github.com/sorentwo/readthis) to cache in redis. Toggle caching in development mode run `rails dev:cache`
+- [webpacker](https://github.com/rails/webpacker)
+- Added views from devise into the application so they can manually be managed [devise-bootstrap-views](https://github.com/hisea/devise-bootstrap-views)
+
+- re: active_model_serializers version - is what discourse uses - https://github.com/discourse/discourse/blob/master/Gemfile
+- remove credentials, explain what to do when setting up again
+
+TODO:
+
+- Add doorkeeper back in
+- make a decision re: winebouncer or built in doorkeeper shizzam
+
+---
+
 #### Create an awesome versioned API, secured with OAuth2 and automatically documented.
 
-This is a basic Rails 4 application with [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper), [Grape](https://github.com/intridea/grape) & [Swagger](http://swagger.io/) for getting to API building quickly.
+This is a basic Rails 5 application with [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper), [Grape](https://github.com/intridea/grape) & [Swagger](http://swagger.io/) for getting to API building quickly.
 
-You can view the [live app](https://grape-doorkeeper.herokuapp.com) and the [Swagger-ui documentation](https://grape-doorkeeper.herokuapp.com/documentation). 
+You can view the [live app](https://grape-doorkeeper.herokuapp.com) and the [Swagger-ui documentation](https://grape-doorkeeper.herokuapp.com/documentation).
 
 This app is ready to deploy to Heroku [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/sethherr/grape-doorkeeper)
-
 
 ## Set up
 
@@ -21,13 +38,11 @@ This app is ready to deploy to Heroku [![Deploy](https://www.herokucdn.com/deplo
 
 This app includes [omniauth-bike-index](https://github.com/bikeindex/omniauth-bike-index). For Bike Index login to work, create a Bike Index app at [BikeIndex.org/oauth/applications/new](https://BikeIndex.org/oauth/applications/new) and add the values from `BIKEINDEX_APP_ID` and `BIKEINDEX_APP_SECRET` to the `.env` file.
 
-*Bike Index uses a similar grape, Swagger, doorkeeper setup&mdash;this is an example of [creating an OmniAuth strategy for doorkeeper](https://github.com/doorkeeper-gem/doorkeeper/wiki/Create-a-OmniAuth-strategy-for-your-provider)*.
-
+_Bike Index uses a similar grape, Swagger, doorkeeper setup&mdash;this is an example of [creating an OmniAuth strategy for doorkeeper](https://github.com/doorkeeper-gem/doorkeeper/wiki/Create-a-OmniAuth-strategy-for-your-provider)_.
 
 ## Adding to an existing application
 
 [View how to on the wiki](https://github.com/sethherr/grape-doorkeeper/wiki/Adding-to-an-existing-application).
-
 
 ## Notes
 
@@ -45,13 +60,12 @@ Important things in the Gemfile:
 - [grape-swagger](https://github.com/tim-vandecasteele/grape-swagger) (automatically generates Swagger docs for the [auto documentation](https://grape-doorkeeper.herokuapp.com/documentation))
 - [Devise](https://github.com/plataformatec/devise) (users)
 
-
 Also important, but maybe not as necessary to know about:
 
 - [rails-assets](https://rails-assets.org) manages the js for swagger-ui
 - [Puma](http://puma.io/) (the web server)
 - [api-pagination](https://github.com/davidcelis/api-pagination)
-- [grape-active_model_serializers](https://github.com/jrhe/grape-active_model_serializers) 
+- [active_model_serializers](https://github.com/rails-api/active_model_serializers/tree/0-8-stable) - uses 0.8 branch of active model serializers, because nothing past 0.8 supports caching
 - [CORS](https://github.com/cyu/rack-cors)
 - [foreman](https://github.com/ddollar/foreman) (in development to manage processes)
 - [Haml](http://haml.info/) - and [Hamlit](https://github.com/k0kubun/hamlit), which is faster haml
@@ -59,7 +73,7 @@ Also important, but maybe not as necessary to know about:
 - [Bootstrap](http://getbootstrap.com/)
 - Postgres
 
-----
+---
 
 If you want to change the name of the app, swap out:
 
@@ -67,7 +81,6 @@ If you want to change the name of the app, swap out:
 - `grape-doorkeeper` in [config/database.yml](config/database.yml) (multiple instances)
 - `grape-doorkeeper` in [config/initializers/session_store.rb](config/initializers/session_store.rb)
 - Do a project wide search of `/grape.doorkeeper/i` to catch any lingering ones like [api_v1.html.haml](app/views/documentation/api_v1.html.haml)
-
 
 ## Testing
 

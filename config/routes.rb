@@ -1,6 +1,10 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
-  use_doorkeeper
-  mount API::Base => '/api'
+  devise_for :users
+
+  root "landing#index"
+
   resources :documentation, only: [:index] do
     collection do
       get :api_v1
@@ -9,6 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  root 'landing#index'
+  # Authenticate sidekiq interface - probably update to verify users are admins or something: https://github.com/mperham/sidekiq/wiki/Monitoring
+  authenticate :user do
+    mount Sidekiq::Web, at: "/sidekiq"
+  end
+
+  # Grape API - must be below routes so it doesn't override
+  mount API::Base => "/api"
 end

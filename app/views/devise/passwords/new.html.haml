@@ -1,11 +1,9 @@
-= bootstrap_devise_error_messages!
-.panel.panel-default
-  .panel-heading
-    %h4= t('.forgot_your_password', :default => 'Forgot your password?')
-  .panel-body
-    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, role: "form" }) do |f|
-      .form-group
-        = f.label :email
-        = f.email_field :email, class: "form-control"
-      = f.submit t('.send_me_reset_password_instructions', :default => "Send me reset password instructions"), class: "btn btn-primary"
-= render "devise/shared/links"
+%h1= t('.forgot_your_password')
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = bootstrap_devise_error_messages!
+  .form-group
+    = f.label :email
+    = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+  .form-group
+    = f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary'
+= render 'devise/shared/links'

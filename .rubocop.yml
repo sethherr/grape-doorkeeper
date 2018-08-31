@@ -1,12 +1,15 @@
 AllCops:
+  TargetRubyVersion:
+    2.5
   Exclude:
-    - 'Guardfile'
-    - 'bin/**/*'
-    - 'node_modules/**/*'
-    - 'db/schema.rb'
-    - 'db/migrate/**/*'
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "db/migrate/**/*"
 
 Style/Documentation:
+  Enabled: false
+
+FrozenStringLiteralComment:
   Enabled: false
 
 Style/SymbolProc:
@@ -20,3 +23,18 @@ Style/AndOr:
 
 ParameterLists:
   CountKeywordArgs: false
+
+# https://anti-pattern.com/always-use-double-quoted-strings-in-ruby
+Style/StringLiterals:
+  EnforcedStyle: double_quotes # Always do it, lower cost cognitively
+
+NumericLiterals:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
