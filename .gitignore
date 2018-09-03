@@ -18,3 +18,7 @@
 # Ignore rvm stuff and things
 dump.rdb
 .ruby-*
+
+# New things
+node_modules
+config/master.key
