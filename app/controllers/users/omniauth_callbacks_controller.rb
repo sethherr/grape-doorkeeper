@@ -1,6 +1,6 @@
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip_before_action :ensure_user
+    skip_before_action :ensure_user, raise: false
 
     def bike_index
       @user = User.from_omniauth(request.env['omniauth.auth'].uid, request.env['omniauth.auth'])

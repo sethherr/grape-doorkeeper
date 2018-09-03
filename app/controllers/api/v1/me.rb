@@ -24,6 +24,7 @@ module API
           items = (0..19).map do |i|
             ImaginaryItem.new(name: "Foo #{i * 7}", id: i, secret: 'Bar')
           end
+
           # We use the item serializer to serialize these items!
           paginate items
         end
